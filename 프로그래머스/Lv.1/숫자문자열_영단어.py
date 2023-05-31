@@ -18,3 +18,12 @@ def solution2(s):
     return int(s)
 
 print(solution("one4seveneight"))
+
+def solution3(s):
+    num_word = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
+
+    for key,value in num_word.items():
+        s = s.replace(key,value)
+
+    return int(s)
+print(solution3("23four5six7"))
