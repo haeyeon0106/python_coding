@@ -11,7 +11,7 @@ def rank(lotto_right):
         return 5
     else:
         return 6
-def solution(lottos, win_nums):
+def solution2(lottos, win_nums):
     answer = []
     result = 0
     zero = 0
@@ -45,3 +45,12 @@ def solution3(lottos, win_nums):
         6: 1
     }
     return [rank[len(set(lottos) & set(win_nums)) + lottos.count(0)], rank[len(set(lottos) & set(win_nums))]]
+
+# 내 코드 간략화
+def solution4(lottos, win_nums):
+    result = 0
+    rank = {0:6,1:6,2:5,3:4,4:3,5:2,6:1}
+    for lotto in lottos:
+        if lotto in win_nums:
+            result += 1
+    return rank[result+lottos.count(0)],rank[result]
