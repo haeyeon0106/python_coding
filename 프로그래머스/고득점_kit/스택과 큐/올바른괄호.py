@@ -24,7 +24,7 @@ def solution3(s):
         if i == '(':
             stack.append(i)
         else:
-            if not stack:
+            if not stack:   # stack이 비어있을 때
                 return False
             stack.pop()
     
@@ -43,3 +43,13 @@ def solution4(s):
             stack.append(i)
     
     return len(stack) == 0
+
+
+# === 2트로 푼 코드 (테스트케이스 통과 but, 효율성 불통)
+def solution4(s):
+    
+    while '()' in s:
+        s = s.replace('()','')
+    if len(s) != 0:
+        return False
+    return True
